@@ -1,12 +1,14 @@
 import React from "react";
 import NavBar from "./components/NavBar";
 import ItemListContainer from "./components/ItemListContainer";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
-    <div class="container mx-auto px-4 py-4">
+    <div className="container max-w-screen-lg mx-auto px-4 py-4 ">
       <NavBar />
-      <ItemListContainer greeting="Welcome to MyReactEcommerce 🚀" />
+      <ItemListContainer />
+      <Footer />
     </div>
   );
 };
