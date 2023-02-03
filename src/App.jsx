@@ -7,7 +7,7 @@ const App = () => {
   return (
     <div className="container max-w-screen-lg mx-auto px-4 py-4 ">
       <NavBar />
-      <ItemListContainer />
+      <ItemListContainer greeting="Our Products" />
       <Footer />
     </div>
   );
