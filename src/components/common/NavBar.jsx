@@ -24,16 +24,19 @@ const Componente1 = () => {
               </a>
               <ul className="p-2">
                 <li>
-                  <a>Submenu 1</a>
+                  <Link to="/category/1">Programación Y Desarrollo</Link>
                 </li>
                 <li>
-                  <a>Submenu 2</a>
+                  <Link to="/category/2">Diseño UX/UI</Link>
+                </li>
+                <li>
+                  <Link to="/category/3">Inversiones Y Finanzas</Link>
                 </li>
               </ul>
             </li>
           </ul>
         </div>
-        <Link to="/" className="font-bold normal-case text-xl text-primary">
+        <Link to="/" className="font-bold normal-case text-xl ">
           MyReactEcommerce
         </Link>
       </div>
@@ -45,12 +48,15 @@ const Componente1 = () => {
           </li>
           <li tabIndex={0}>
             <a className="justify-between">Category</a>
-            <ul className="">
+            <ul className="bg-base-100">
               <li>
-                <a>Submenu 1</a>
+                <Link to="/category/1">Programación Y Desarrollo</Link>
               </li>
               <li>
-                <a>Submenu 2</a>
+                <Link to="/category/2">Diseño UX/UI</Link>
+              </li>
+              <li>
+                <Link to="/category/3">Inversiones Y Finanzas</Link>
               </li>
             </ul>
           </li>

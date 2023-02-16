@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ItemCount = () => {
+const ItemCount = ({ stock }) => {
   const [count, setCount] = useState(1);
 
   const onAdd = (op) => {
@@ -13,14 +13,13 @@ const ItemCount = () => {
         break;
     }
   };
-
   return (
-    <div className="btn-group">
-      <button className="btn" onClick={() => onAdd(0)}>
+    <div className="btn-group ">
+      <button className="btn " onClick={() => onAdd(0)}>
         «
       </button>
       <button className="btn">{count}</button>
-      <button className="btn" onClick={() => onAdd(1)}>
+      <button className="btn " onClick={() => onAdd(1)}>
         »
       </button>
     </div>

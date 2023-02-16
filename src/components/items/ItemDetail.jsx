@@ -1,12 +1,15 @@
+import ItemCount from "./ItemCount";
+
 const ItemDetail = ({ data }) => {
-  console.log(data);
   return (
-    <div className="hero">
+    <div className="card bg-base-200 p-12">
       <div className="hero-content flex-col lg:flex-row">
         <div>
-          <h1 className="text-5xl font-bold"> 2</h1>
-          <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-          <button className="btn btn-primary">Buy</button>
+          <h1 className="text-5xl font-bold">{data.name} </h1>
+          <p className="py-6 text-2xl">{data.description}</p>
+          <h2 className="text-primary text-3xl font-bold mb-6 ">${data.price} ARS</h2>
+          <button className="btn btn-primary normal-case text-xl">Comprar</button>
+          <ItemCount stock={data.stock} />
         </div>
       </div>
     </div>
