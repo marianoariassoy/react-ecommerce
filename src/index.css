@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.hero-content {
+  padding: 0;
+}
+.navbar {
+  padding: 0;
+}

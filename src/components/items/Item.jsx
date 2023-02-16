@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
-const Item = ({ name, description, price, stock }) => {
+const Item = ({ id, name, description, price, stock }) => {
   const [count, setCount] = useState(1);
 
   const onAdd = (op) => {
@@ -14,10 +15,7 @@ const Item = ({ name, description, price, stock }) => {
     }
   };
   return (
-    <div className="card bg-base-100 shadow-xl">
-      <figure>
-        <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" />
-      </figure>
+    <div className="card bg-base-200 shadow-xl">
       <div className="card-body">
         <h2 className="card-title">{name}</h2>
         <p className="mb-2">{description}</p>
@@ -32,8 +30,9 @@ const Item = ({ name, description, price, stock }) => {
               »
             </button>
           </div>
-
-          <button className="btn btn-primary">Buy</button>
+          <Link to={`/item/${id}`} className="btn btn-primary">
+            Details
+          </Link>
         </div>
       </div>
     </div>

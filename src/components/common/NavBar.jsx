@@ -1,4 +1,5 @@
-import CartWidget from "./CartWidget";
+import CartWidget from "../cart/CartWidget";
+import { Link } from "react-router-dom";
 
 const Componente1 = () => {
   return (
@@ -12,10 +13,7 @@ const Componente1 = () => {
           </label>
           <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
             <li>
-              <a>Home</a>
-            </li>
-            <li>
-              <a>Store</a>
+              <Link to="/products">Products</Link>
             </li>
             <li tabIndex={0}>
               <a className="justify-between">
@@ -35,15 +33,15 @@ const Componente1 = () => {
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl text-primary">MyReactEcommerce</a>
+        <Link to="/" className="font-bold normal-case text-xl text-primary">
+          MyReactEcommerce
+        </Link>
       </div>
+
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <a>Home</a>
-          </li>
-          <li>
-            <a>Store</a>
+            <Link to="/products">Products</Link>
           </li>
           <li tabIndex={0}>
             <a className="justify-between">Category</a>
