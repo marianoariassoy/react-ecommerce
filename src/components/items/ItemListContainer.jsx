@@ -18,7 +18,7 @@ const ItemListContainer = () => {
   return (
     <main>
       <div className="hero mb-12">
-        <h1 className="text-5xl font-bold">Our Products</h1>
+        <h1 className="text-5xl font-bold text-primary">Our Products</h1>
       </div>
       {data && <ItemList data={data} />}
     </main>
