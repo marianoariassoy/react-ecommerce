@@ -5,7 +5,7 @@ const Item = ({ data }) => {
   let category = categories[data.category];
 
   return (
-    <div className="card bg-base-100 ">
+    <div className="card bg-base-100 rounded-none">
       <div className="card-body text-gray-400">
         <div className="badge badge-outline mb-2 text-gray-500 p-4">{category}</div>
         <h2 className="card-title text-primary text-2xl mb-3">{data.name}</h2>
