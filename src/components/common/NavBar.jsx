@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import CartWidget from "../cart/CartWidget";
 import categories from "../../utils/categories";
 import logoCoder from "../../assets/logo_coder.svg";
@@ -15,7 +15,9 @@ const Componente1 = () => {
           </label>
           <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
             <li>
-              <Link to="/list">Cursos y Careras</Link>
+              <NavLink activeClassName="text-gray" to="/list">
+                Cursos y Careras
+              </NavLink>
             </li>
             <li tabIndex={0}>
               <a className="justify-between ">
@@ -27,22 +29,22 @@ const Componente1 = () => {
               <ul className="p-2 bg-base-100">
                 {categories.map((item, index) => (
                   <li key={index}>
-                    <Link to={`/category/${index}`}>{item}</Link>
+                    <NavLink to={`/category/${index}`}>{item}</NavLink>
                   </li>
                 ))}
               </ul>
             </li>
           </ul>
         </div>
-        <Link to="/">
+        <NavLink to="/">
           <img src={logoCoder} width="150" alt="Logo Coder"></img>
-        </Link>
+        </NavLink>
       </div>
 
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1" style={{ zIndex: 1000 }}>
           <li className="mx-3 font-semibold">
-            <Link to="/list">Cursos y Carreras</Link>
+            <NavLink to="/list">Cursos y Careras</NavLink>
           </li>
           <li tabIndex={0} className="mx-3 font-semibold">
             <a className="justify-between ">
@@ -54,7 +56,7 @@ const Componente1 = () => {
             <ul className="bg-base-100 ">
               {categories.map((item, index) => (
                 <li key={index}>
-                  <Link to={`/category/${index}`}>{item}</Link>
+                  <NavLink to={`/category/${index}`}>{item}</NavLink>
                 </li>
               ))}
             </ul>
