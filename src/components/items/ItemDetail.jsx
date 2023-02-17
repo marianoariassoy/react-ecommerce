@@ -1,15 +1,23 @@
 import ItemCount from "./ItemCount";
+import categories from "../../utils/categories";
 
 const ItemDetail = ({ data }) => {
+  let category = categories[data.category];
   return (
-    <div className="card bg-base-200 p-12">
-      <div className="hero-content flex-col lg:flex-row">
+    <div className="card bg-base-200 mt-6 w-full">
+      <div className="hero-content flex-col lg:flex-row p-12">
         <div>
-          <h1 className="text-5xl font-bold">{data.name} </h1>
+          <div className="badge badge-outline text-gray-500 mb-4">{category}</div>
+          <h1 className="text-5xl font-bold text-primary">{data.name} </h1>
           <p className="py-6 text-2xl">{data.description}</p>
-          <h2 className="text-primary text-3xl font-bold mb-6 ">${data.price} ARS</h2>
-          <button className="btn btn-primary normal-case text-xl">Comprar</button>
-          <ItemCount stock={data.stock} />
+          <div className="text-gray-500 mb-4">{data.start}</div>
+
+          <h2 className="text-primary text-4xl font-bold mb-6 ">${data.price} ARS</h2>
+
+          <div className="card-actions  items-center">
+            <ItemCount stock={data.stock} />
+            <button className="btn text-primary btn-lg mr-6 btn-outline">Comprar</button>
+          </div>
         </div>
       </div>
     </div>

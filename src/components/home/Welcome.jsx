@@ -2,15 +2,16 @@ import { Link } from "react-router-dom";
 
 const Welcome = () => {
   return (
-    <div className="card bg-base-200 p-12">
-      <div className="hero-content text-center">
-        <div className="max-w-md">
-          <h1 className="text-5xl font-bold">Hello world</h1>
-          <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-          <Link to="/products" className="btn btn-primary">
-            Get Started
-          </Link>
-        </div>
+    <div className="text-center h-full flex items-center justify-center">
+      <div>
+        <h1 className="text-9xl font-bold">Hola 👋</h1>
+        <p className="text-3xl mb-12 mt-6">
+          Provident cupiditate voluptatem et in. <br /> Quaerat fugiat ut assumenda excepturi exercitationem quasi. <br />
+          In deleniti eaque aut repudiandae et a id nisi.
+        </p>
+        <Link to="/list" className="btn btn-primary btn-lg">
+          VER CURSOS
+        </Link>
       </div>
     </div>
   );

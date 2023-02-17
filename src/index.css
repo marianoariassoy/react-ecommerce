@@ -2,9 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-.hero-content {
-  padding: 0;
+html,
+body {
+  height: 100%;
 }
-.navbar {
-  padding: 0;
+#root {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100%;
+}
+header {
+  height: 8rem;
+  padding: 2rem 3rem !important;
+}
+footer {
+  padding: 3rem;
+}
+.bg-gradient {
+  background-color: #8ec5fc;
+  background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
 }

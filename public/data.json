@@ -7,7 +7,7 @@
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt placeat, eaque at nulla eum eos impedit ad laboriosam excepturi fuga, quaerat delectus earum",
     "price": 40320,
     "stock": 5,
-    "category": 1
+    "category": 0
   },
   {
     "id": 2,
@@ -17,7 +17,7 @@
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt placeat, eaque at nulla eum eos impedit ad laboriosam excepturi fuga, quaerat delectus earum",
     "price": 40320,
     "stock": 10,
-    "category": 1
+    "category": 0
   },
   {
     "id": 3,
@@ -27,7 +27,7 @@
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt placeat, eaque at nulla eum eos impedit ad laboriosam excepturi fuga, quaerat delectus earum",
     "price": 40320,
     "stock": 8,
-    "category": 1
+    "category": 0
   },
   {
     "id": 4,
@@ -37,7 +37,7 @@
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt placeat, eaque at nulla eum eos impedit ad laboriosam excepturi fuga, quaerat delectus earum",
     "price": 94400,
     "stock": 8,
-    "category": 1
+    "category": 0
   },
   {
     "id": 5,
@@ -47,7 +47,7 @@
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt placeat, eaque at nulla eum eos impedit ad laboriosam excepturi fuga, quaerat delectus earum",
     "price": 35200,
     "stock": 8,
-    "category": 2
+    "category": 1
   },
   {
     "id": 6,
@@ -57,7 +57,7 @@
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt placeat, eaque at nulla eum eos impedit ad laboriosam excepturi fuga, quaerat delectus earum",
     "price": 35200,
     "stock": 8,
-    "category": 2
+    "category": 1
   },
   {
     "id": 7,
@@ -67,7 +67,7 @@
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt placeat, eaque at nulla eum eos impedit ad laboriosam excepturi fuga, quaerat delectus earum",
     "price": 30320,
     "stock": 8,
-    "category": 3
+    "category": 2
   },
   {
     "id": 8,
@@ -77,6 +77,6 @@
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt placeat, eaque at nulla eum eos impedit ad laboriosam excepturi fuga, quaerat delectus earum",
     "price": 30320,
     "stock": 8,
-    "category": 3
+    "category": 2
   }
 ]

@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react";
-import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
+import ItemList from "./ItemList";
+import categories from "../../utils/categories";
+let category = null;
 
 const ItemListContainer = () => {
   let { id } = useParams();
   const [data, setData] = useState(null);
 
   useEffect(() => {
+    category = id ? categories[id] : "Todos los curso";
+
     fetch("http://localhost:5173/data.json")
       .then((response) => response.json())
       .then((data) => {
@@ -20,15 +24,15 @@ const ItemListContainer = () => {
       .catch((error) => {
         console.error(error);
       });
-  });
+  }, [id]);
 
   return (
-    <main>
-      <div className="hero mb-12">
-        <h1 className="text-5xl font-bold">Cursos y Carreras</h1>
+    <>
+      <div>
+        <h1 className="text-5xl font-bold mb-20 text-center">{category} 🚀</h1>
       </div>
       {data && <ItemList data={data} />}
-    </main>
+    </>
   );
 };
 

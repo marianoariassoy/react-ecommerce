@@ -1,6 +1,6 @@
-import ItemDetail from "./ItemDetail";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import ItemDetail from "./ItemDetail";
 
 const ItemDetailContainer = () => {
   let { id } = useParams();
@@ -18,7 +18,7 @@ const ItemDetailContainer = () => {
       });
   }, []);
 
-  return <main>{data && <ItemDetail data={data[0]} />}</main>;
+  return <>{data && <ItemDetail data={data[0]} />}</>;
 };
 
 export default ItemDetailContainer;
