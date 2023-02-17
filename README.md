@@ -1,4 +1,4 @@
-# My React ECommerce 🚀
+# My React Ecommerce 🚀
 
 ## Run Locally
 
