@@ -1,4 +1,3 @@
-# My React Ecommerce
 
 ## Run Locally 🚀
 
@@ -11,7 +10,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd myreactecommerce
+  cd react-ecommerce
 ```
 
 Install dependencies
