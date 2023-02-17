@@ -4,10 +4,10 @@ import categories from "../../utils/categories";
 const ItemDetail = ({ data }) => {
   let category = categories[data.category];
   return (
-    <div className="hero mx-auto bg-base-200 mt-6 max-w-4xl">
+    <div className="hero mx-auto bg-base-100 mt-6 max-w-4xl">
       <div className="hero-content flex-col lg:flex-row p-12 ">
         <div>
-          <div className="badge badge-outline text-gray-500 mb-4">{category}</div>
+          <div className="badge  mb-2 bg-base-200 p-4 rounded-none border-0">{category}</div>
           <h1 className="text-5xl font-bold text-primary">{data.name} </h1>
           <p className="py-6 text-2xl">{data.description}</p>
           <div className="text-gray-500 mb-4">{data.start}</div>
