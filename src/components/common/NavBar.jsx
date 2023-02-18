@@ -35,10 +35,9 @@ const Componente1 = () => {
           </ul>
         </div>
         <NavLink to="/">
-          <img src={logoCoder} width="150" alt="Logo Coder"></img>
+          <img src={logoCoder} width="150" alt="Logo Coderhouse"></img>
         </NavLink>
       </div>
-
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1" style={{ zIndex: 1000 }}>
           <li className="mx-3 font-semibold">
@@ -61,7 +60,6 @@ const Componente1 = () => {
           </li>
         </ul>
       </div>
-
       <div className="navbar-end">
         <CartWidget />
       </div>

@@ -1,4 +1,6 @@
-# React E-commerce App for Coderhouse ✨
+# **React E-Commerce Demo**
+
+For Coderhouse ✨
 
 ![gif](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2QxYzY5MTQzZTYwZTBmMGMwNjRjZDNlNDk0YmZmMmY5NzQyOGIyYiZjdD1n/YR1oLm55CFZFgZBlsh/giphy.gif)
 
