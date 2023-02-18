@@ -1,4 +1,4 @@
-![site usage](https://github.com/marianoariassoy/react-ecommerce/myreactecommerce.gif)
+![gif](http://marianoarias.soy/files/myreactecommerce.gif)
 
 ## Run Locally 🚀
 
@@ -25,3 +25,5 @@ Start the server
 ```bash
   npm run dev
 ```
+
+[def]: "http://marianoarias.soy/files/myreactecommerce.gif"
