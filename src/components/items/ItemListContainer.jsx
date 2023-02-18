@@ -4,14 +4,14 @@ import ItemList from "./ItemList";
 import categories from "../../utils/categories";
 import getItems from "../../utils/getItems";
 const url = "http://localhost:5173/data.json";
-let category = null;
+let categoryTitle = null;
 
 const ItemListContainer = () => {
   let { id } = useParams();
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    category = id ? categories[id] : "Todos los curso";
+    categoryTitle = id ? categories[id] : "Todos los curso";
     getItems(url).then((data) => {
       if (id) {
         const result = data.filter((item) => item.category === parseInt(id));
@@ -25,7 +25,7 @@ const ItemListContainer = () => {
   return (
     <>
       <div>
-        <h1 className="text-5xl font-bold mb-20 text-center">{category} 🚀</h1>
+        <h1 className="text-5xl font-bold mb-20 text-center">{categoryTitle} 🚀</h1>
       </div>
       {data && <ItemList data={data} />}
     </>
