@@ -1,3 +1,4 @@
+![site usage](https://github.com/marianoariassoy/react-ecommerce/myreactecommerce.gif)
 
 ## Run Locally 🚀
 
