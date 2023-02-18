@@ -7,7 +7,7 @@ const Item = ({ data }) => {
   return (
     <div className="card bg-base-100 rounded-none">
       <div className="card-body text-gray-400">
-        <div className="badge  mb-2 bg-base-200 p-4 rounded-none border-0">{category}</div>
+        <div className="badge mb-2 p-4 rounded-none bg-base-200 border-none">{category}</div>
         <h2 className="card-title text-primary text-3xl mb-3 ">{data.name}</h2>
         <div className="flex">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="stroke-current flex-shrink-0 w-6 h-6 mr-2">
