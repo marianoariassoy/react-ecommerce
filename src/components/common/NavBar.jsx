@@ -15,9 +15,7 @@ const Componente1 = () => {
           </label>
           <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
             <li>
-              <NavLink activeClassName="text-gray" to="/list">
-                Cursos y Careras
-              </NavLink>
+              <NavLink to="/list">Cursos y Careras</NavLink>
             </li>
             <li tabIndex={0}>
               <a className="justify-between ">

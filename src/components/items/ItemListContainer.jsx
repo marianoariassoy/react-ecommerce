@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 import categories from "../../utils/categories";
+import getItems from "../../utils/getItems";
+const url = "http://localhost:5173/data.json";
 let category = null;
 
 const ItemListContainer = () => {
@@ -10,20 +12,14 @@ const ItemListContainer = () => {
 
   useEffect(() => {
     category = id ? categories[id] : "Todos los curso";
-
-    fetch("http://localhost:5173/data.json")
-      .then((response) => response.json())
-      .then((data) => {
-        if (id) {
-          const result = data.filter((item) => item.category === parseInt(id));
-          setData(result);
-        } else {
-          setData(data);
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    getItems(url).then((data) => {
+      if (id) {
+        const result = data.filter((item) => item.category === parseInt(id));
+        setData(result);
+      } else {
+        setData(data);
+      }
+    });
   }, [id]);
 
   return (

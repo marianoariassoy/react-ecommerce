@@ -1,21 +1,22 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
+import getItems from "../../utils/getItems";
+const url = "http://localhost:5173/data.json";
 
 const ItemDetailContainer = () => {
   let { id } = useParams();
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:5173/data.json")
-      .then((response) => response.json())
-      .then((data) => {
-        const result = data.filter((item) => item.id === parseInt(id));
+    getItems(url).then((data) => {
+      if (id) {
+        const result = data.filter((item) => item.category === parseInt(id));
         setData(result);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+      } else {
+        setData(data);
+      }
+    });
   }, []);
 
   return <>{data && <ItemDetail data={data[0]} />}</>;
