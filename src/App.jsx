@@ -5,6 +5,8 @@ import Footer from "./components/common/Footer";
 import Welcome from "./components/home/Welcome";
 import ItemListContainer from "./components/items/ItemListContainer";
 import ItemDetailContainer from "./components/items/ItemDetailContainer";
+import PageNotFound from "./components/common/PageNotFound";
+
 import Cart from "./components/cart/Cart";
 
 const App = () => {
@@ -14,11 +16,12 @@ const App = () => {
       <main>
         <div className="container mx-auto h-full p-12">
           <Routes>
-            <Route exact path="/" element={<Welcome />} />
-            <Route exact path="/list" element={<ItemListContainer />} />
-            <Route exact path="/category/:id" element={<ItemListContainer />} />
-            <Route exact path="/item/:id" element={<ItemDetailContainer />} />
-            <Route exact path="/cart" element={<Cart />} />
+            <Route path="/" element={<Welcome />} />
+            <Route path="/list" element={<ItemListContainer />} />
+            <Route path="/category/:id" element={<ItemListContainer />} />
+            <Route path="/item/:id" element={<ItemDetailContainer />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
         </div>
       </main>

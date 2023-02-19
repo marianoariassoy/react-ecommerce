@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import CartWidget from "../cart/CartWidget";
 import categories from "../../utils/categories";
 import logoCoder from "../../assets/logo_coder.svg";
@@ -34,9 +34,9 @@ const Componente1 = () => {
             </li>
           </ul>
         </div>
-        <NavLink to="/">
+        <Link to="/">
           <img src={logoCoder} width="150" alt="Logo Coderhouse"></img>
-        </NavLink>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1" style={{ zIndex: 1000 }}>
