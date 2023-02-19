@@ -11,7 +11,7 @@ const ItemDetailContainer = () => {
   useEffect(() => {
     getItems(url).then((data) => {
       if (id) {
-        const data = data.filter((item) => item.category === parseInt(id));
+        const result = data.filter((item) => item.category === parseInt(id));
         setData(result);
       } else {
         setData(data);
