@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
 import getItems from "../../utils/getItems";
-const url = "http://localhost:5173/data.json";
+const url = "/data.json";
 
 const ItemDetailContainer = () => {
   let { id } = useParams();

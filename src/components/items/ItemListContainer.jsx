@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 import categories from "../../utils/categories";
 import getItems from "../../utils/getItems";
-const url = "http://localhost:5173/data.json";
+const url = "/data.json";
 let categoryTitle = null;
 
 const ItemListContainer = () => {
