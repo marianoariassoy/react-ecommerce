@@ -15,9 +15,8 @@ const App = () => {
         <div className="container mx-auto h-full p-12">
           <Routes>
             <Route exact path="/" element={<Welcome />} />
-            <Route exact path="/list" element={<ItemListContainer />}>
-              <Route exact path=":id" element={<ItemListContainer />} />
-            </Route>
+            <Route exact path="/list" element={<ItemListContainer />} />
+            <Route exact path="/category/:id" element={<ItemListContainer />} />
             <Route exact path="/item/:id" element={<ItemDetailContainer />} />
             <Route exact path="/cart" element={<Cart />} />
           </Routes>
