@@ -1,8 +1,15 @@
-import ItemCount from "./ItemCount";
+import { useContext } from "react";
+import { CartContext } from "../../context/cartContext";
 import categories from "../../utils/categories";
+import ItemCount from "./ItemCount";
 
 const ItemDetail = ({ data }) => {
   let category = categories[data.category];
+
+  const { addToCart } = useContext(CartContext);
+
+  const onAdd = (quantity) => addToCart(data, quantity);
+
   return (
     <div className="hero mx-auto bg-base-100 mt-6 max-w-4xl">
       <div className="hero-content flex-col lg:flex-row p-12 ">
@@ -19,9 +26,11 @@ const ItemDetail = ({ data }) => {
 
           <h2 className="text-primary text-4xl font-bold mb-6 ">${data.price} ARS</h2>
 
-          <div className="card-actions  items-center">
+          <div className="card-actions items-center">
             <ItemCount stock={data.stock} />
-            <button className="btn text-primary btn-lg mr-6 btn-outline">Comprar</button>
+            <button className="btn text-primary btn-lg mr-6 btn-outline" onClick={onAdd}>
+              Comprar
+            </button>
           </div>
         </div>
       </div>

@@ -3,7 +3,7 @@ import CartWidget from "../cart/CartWidget";
 import categories from "../../utils/categories";
 import logoCoder from "../../assets/logo_coder.svg";
 
-const Componente1 = () => {
+const NavBar = () => {
   return (
     <header className="navbar">
       <div className="navbar-start">
@@ -67,4 +67,4 @@ const Componente1 = () => {
   );
 };
 
-export default Componente1;
+export default NavBar;
