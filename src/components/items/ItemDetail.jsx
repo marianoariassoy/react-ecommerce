@@ -1,7 +1,14 @@
-import { useContext, useEffect } from "react";
+//Dependencies
+import { useContext } from "react";
+
+//Context
 import { CartContext } from "../../context/cartContext";
-import categories from "../../utils/categories";
+
+//Components
 import ItemCount from "./ItemCount";
+
+//Utils
+import categories from "../../utils/categories";
 
 const ItemDetail = ({ data }) => {
   const category = categories[data[0].category];

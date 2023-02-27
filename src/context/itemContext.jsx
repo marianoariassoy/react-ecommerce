@@ -1,4 +1,7 @@
+//Dependencies
 import React, { useState, useEffect, createContext } from "react";
+
+//Data
 const url = "/data.json";
 
 export const ItemContext = createContext([]);

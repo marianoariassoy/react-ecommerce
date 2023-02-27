@@ -1,4 +1,7 @@
+//Dependencies
 import { Link } from "react-router-dom";
+
+//Utils
 import categories from "../../utils/categories";
 
 const Item = ({ data }) => {
