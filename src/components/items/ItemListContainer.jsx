@@ -1,25 +1,23 @@
-import { useEffect, useState } from "react";
+//Dependencies
+import { useContext, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+
+//Context
+import { ItemContext } from "../../context/itemContext";
+
+//Components
 import ItemList from "./ItemList";
+
+//Utils
 import categories from "../../utils/categories";
-import getItems from "../../utils/getItems";
-const url = "/data.json";
-let categoryTitle = null;
 
 const ItemListContainer = () => {
   let { id } = useParams();
-  const [data, setData] = useState(null);
+  const { getItems } = useContext(ItemContext);
+  const [categoryTitle, setCategoryTitle] = useState(null);
 
   useEffect(() => {
-    categoryTitle = id ? categories[id] : "Todos los curso";
-    getItems(url).then((data) => {
-      if (id) {
-        const result = data.filter((item) => item.category === parseInt(id));
-        setData(result);
-      } else {
-        setData(data);
-      }
-    });
+    setCategoryTitle(id ? categories[id] : "Todos los cursos");
   }, [id]);
 
   return (
@@ -27,7 +25,7 @@ const ItemListContainer = () => {
       <div>
         <h1 className="text-5xl font-bold mb-20 text-center">{categoryTitle} 🚀</h1>
       </div>
-      {data && <ItemList data={data} />}
+      {<ItemList data={getItems(id)} />}
     </>
   );
 };

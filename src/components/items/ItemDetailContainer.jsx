@@ -1,25 +1,23 @@
-import { useEffect, useState } from "react";
+//Dependencies
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+
+//Components
 import ItemDetail from "./ItemDetail";
-import getItems from "../../utils/getItems";
-const url = "/data.json";
+
+//Context
+import { ItemContext } from "../../context/itemContext";
 
 const ItemDetailContainer = () => {
   let { id } = useParams();
-  const [data, setData] = useState(null);
+  const { getItemsById } = useContext(ItemContext);
+  // const [data, setData] = useState(null);
 
-  useEffect(() => {
-    getItems(url).then((data) => {
-      if (id) {
-        const result = data.filter((item) => item.id === parseInt(id));
-        setData(result);
-      } else {
-        setData(data);
-      }
-    });
-  }, []);
+  // useEffect(() => {
+  //   setData(getItemsById(id));
+  // }, []);
 
-  return <>{data && <ItemDetail data={data[0]} />}</>;
+  return <>{<ItemDetail data={getItemsById(id)} />}</>;
 };
 
 export default ItemDetailContainer;
