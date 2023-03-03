@@ -1,7 +1,7 @@
 //Dependencies
-import React, { useState, useEffect, createContext } from "react";
+import React, { useState, createContext } from "react";
 
-export const CartContext = createContext([]);
+export const CartContext = createContext(null);
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
@@ -10,31 +10,43 @@ export const CartProvider = ({ children }) => {
     setCart([...cart, product]);
   };
 
-  const removeFromCart = (product) => {
-    setCart(cart.filter((item) => item.id !== product.id));
+  const removeFromCart = (id) => {
+    setCart(cart.filter((item) => item.id !== id));
   };
 
   const clearCart = () => {
     setCart([]);
   };
 
-  const isInCart = (product) => {
-    return cart.some((item) => item.id === product.id);
+  const isInCart = (id) => {
+    return cart.some((item) => item.id === id);
   };
 
   const getTotal = () => {
-    return cart.reduce((total, product) => total + product.price, 0);
+    return cart.reduce((total, item) => total + item.price * item.quantity, 0);
+  };
+
+  const getTotalItems = () => {
+    return cart.reduce((total, item) => total + item.quantity, 0);
+  };
+
+  const getStockInCart = (id) => {
+    const item = cart.find((item) => item.id === id);
+    return item ? item.quantity : 0;
   };
 
   return (
     <CartContext.Provider
       value={{
         cart,
+        setCart,
         addToCart,
         removeFromCart,
         clearCart,
         isInCart,
         getTotal,
+        getTotalItems,
+        getStockInCart,
       }}
     >
       {children}
