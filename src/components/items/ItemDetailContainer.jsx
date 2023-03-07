@@ -1,30 +1,29 @@
 //Dependencies
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
 
 //Components
 import ItemDetail from "./ItemDetail";
 import Loader from "../common/Loader";
-
-//Utils
-import getItems from "../../utils/getItems";
 
 const ItemDetailContainer = () => {
   let { id } = useParams();
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    getItems().then((data) => {
-      if (id) {
-        const result = data.filter((item) => item.id === +id);
-        setData(result);
+    const db = getFirestore();
+    const ref = doc(db, "cursos", id);
+    getDoc(ref).then((snapshot) => {
+      if (snapshot.exists()) {
+        setData({ id: snapshot.id, ...snapshot.data() });
       } else {
-        setData(data);
+        console.log("No such document!");
       }
     });
-  }, []);
+  }, [id]);
 
-  return <>{data ? <ItemDetail data={data[0]} /> : <Loader />}</>;
+  return <>{data ? <ItemDetail data={data} /> : <Loader />}</>;
 };
 
 export default ItemDetailContainer;

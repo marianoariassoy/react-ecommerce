@@ -1,17 +1,12 @@
 //Components
 import ItemCount from "./ItemCount";
 
-//Utils
-import categories from "../../utils/categories";
-
 const ItemDetail = ({ data }) => {
-  const category = categories[data.category];
-
   return (
     <div className="hero mx-auto bg-base-100 mt-6 max-w-4xl">
       <div className="hero-content flex-col lg:flex-row p-12 ">
         <div>
-          <div className="badge mb-4 bg-base-200 p-4 rounded-none border-0">{category}</div>
+          <div className="badge mb-4 bg-base-200 p-4 rounded-none border-0">{data.category}</div>
           <h1 className="text-5xl font-bold text-primary">{data.name} </h1>
           <p className="py-6 text-2xl">{data.description}</p>
           <div className="text-gray-500 mb-6 flex">
@@ -20,11 +15,9 @@ const ItemDetail = ({ data }) => {
             </svg>
             {data.start}
           </div>
-
           <h2 className="text-primary text-4xl font-bold mb-6 ">${data.price} ARS</h2>
-
           <div className="card-actions items-center">
-            <ItemCount stock={data.stock} id={data.id} name={data.name} price={data.price} category={data.category} />
+            <ItemCount {...data} />
           </div>
         </div>
       </div>

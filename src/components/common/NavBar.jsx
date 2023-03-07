@@ -1,9 +1,25 @@
+//Dependencies
+import { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
+import { collection, getDocs, getFirestore } from "firebase/firestore";
+
+//Components
 import CartWidget from "../cart/CartWidget";
-import categories from "../../utils/categories";
+
+//Assets
 import logoCoder from "../../assets/logo_coder.svg";
 
 const NavBar = () => {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    const db = getFirestore();
+    const itemCollection = collection(db, "categorias");
+    getDocs(itemCollection).then((querySnapshot) => {
+      setCategories(querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+    });
+  }, [categories]);
+
   return (
     <header className="navbar">
       <div className="navbar-start">
@@ -25,9 +41,9 @@ const NavBar = () => {
                 </svg>
               </a>
               <ul className="p-2 bg-base-100">
-                {categories.map((item, index) => (
-                  <li key={index}>
-                    <NavLink to={`/category/${index}`}>{item}</NavLink>
+                {categories.map((item) => (
+                  <li key={item.id}>
+                    <NavLink to={`/category/${item.name}`}>{item.name}</NavLink>
                   </li>
                 ))}
               </ul>
@@ -51,9 +67,9 @@ const NavBar = () => {
               </svg>
             </a>
             <ul className="bg-base-100 ">
-              {categories.map((item, index) => (
-                <li key={index}>
-                  <NavLink to={`/category/${index}`}>{item}</NavLink>
+              {categories.map((item) => (
+                <li key={item.id}>
+                  <NavLink to={`/category/${item.name}`}>{item.name}</NavLink>
                 </li>
               ))}
             </ul>

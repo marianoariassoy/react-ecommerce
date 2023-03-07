@@ -10,7 +10,7 @@ const Welcome = () => {
             Unite a la comunidad de aprendizaje online en vivo más grande de Latinoamérica. <span className="text-primary">Clases online en vivo dictadas por expertos de la industria</span>, enfoque 100% práctico , mentorías personalizadas y acceso a
             una comunidad de +180.000 estudiantes.
           </p>
-          <Link to="/list" className="btn btn-primary btn-lg">
+          <Link to="/list" className="btn btn-primary btn-lg normal-case">
             VER CURSOS
           </Link>
         </div>

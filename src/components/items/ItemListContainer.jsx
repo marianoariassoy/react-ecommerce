@@ -1,41 +1,31 @@
 //Dependencies
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 
 //Components
 import ItemList from "./ItemList";
 import Loader from "../common/Loader";
 
-//Utils
-import categories from "../../utils/categories";
-import getItems from "../../utils/getItems";
-
 const ItemListContainer = () => {
-  let { id } = useParams();
+  const { category } = useParams();
   const [data, setData] = useState(null);
-  const [categoryTitle, setCategoryTitle] = useState(null);
 
   useEffect(() => {
-    setCategoryTitle(id ? categories[id] : "Todos los cursos");
-
-    getItems().then((data) => {
-      if (id) {
-        const result = data.filter((item) => item.category === +id);
-        setData(result);
-      } else {
+    const db = getFirestore();
+    const itemCollection = collection(db, "cursos");
+    getDocs(itemCollection).then((snapshot) => {
+      const data = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+      if (!category) {
         setData(data);
+      } else {
+        const results = data.filter((item) => item.category === category);
+        setData(results);
       }
     });
-  }, [id]);
+  }, [category]);
 
-  return (
-    <>
-      <div>
-        <h1 className="text-5xl font-bold mb-20 text-center">{categoryTitle} 🚀</h1>
-      </div>
-      {data ? <ItemList data={data} /> : <Loader />}
-    </>
-  );
+  return <>{data ? <ItemList data={data} category={category} /> : <Loader />}</>;
 };
 
 export default ItemListContainer;

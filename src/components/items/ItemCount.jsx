@@ -43,7 +43,6 @@ const ItemCount = ({ stock, id, name, price, category }) => {
       {stock ? (
         <>
           <span className="btn btn-lg ">Vacantes: {stock}</span>
-
           <div className="btn-group">
             <button className="btn btn-lg" data-type="decrement" onClick={(e) => Increment(e)}>
               «
@@ -53,7 +52,6 @@ const ItemCount = ({ stock, id, name, price, category }) => {
               »
             </button>
           </div>
-
           <button className="btn bg-primary btn-lg text-black" onClick={onAdd}>
             Comprar
           </button>
