@@ -2,6 +2,9 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 
+//Components
+import CartForm from "./CartForm";
+
 //Context
 import { CartContext } from "../../context/cartContext";
 
@@ -70,27 +73,7 @@ const Cart = () => {
       </div>
 
       <div className="col w-1/2">
-        <div className="row card bg-base-100 mb-6">
-          <div className="card-body">
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Nombre y Apellido</span>
-              </label>
-              <input type="text" placeholder="nombre" className="input input-bordered" />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Email</span>
-              </label>
-              <input type="text" placeholder="email" className="input input-bordered" />
-            </div>
-          </div>
-        </div>
-
-        <Link to="/list" className="btn btn-outline btn-wide btn-lg normal-case mr-3 mb-3">
-          Continuar comprando
-        </Link>
-        <button className="btn btn-primary btn-wide btn-lg  normal-case">Finalizar la compra</button>
+        <CartForm />
       </div>
     </div>
   );
