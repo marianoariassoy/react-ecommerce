@@ -6,6 +6,9 @@ import { initializeApp } from "firebase/app";
 //Components
 import App from "./App";
 
+//Context
+import { CartProvider } from "./context/cartContext";
+
 //Styles
 import "./index.css";
 
@@ -23,6 +26,8 @@ initializeApp(firebaseConfig);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <CartProvider>
+      <App />
+    </CartProvider>
   </React.StrictMode>
 );

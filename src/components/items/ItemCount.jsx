@@ -1,11 +1,11 @@
 //Dependencies
-import { useState, useContext } from "react";
+import { useState } from "react";
 
 //Context
-import { CartContext } from "../../context/cartContext";
+import { useDataContext } from "../../context/cartContext";
 
 const ItemCount = ({ stock, id, name, price, category }) => {
-  const { addToCart, isInCart, getStockInCart, cart, setCart } = useContext(CartContext);
+  const { addToCart, isInCart, getStockInCart, cart, setCart } = useDataContext();
   const [count, setCount] = useState(1);
 
   const stockInCart = getStockInCart(id);
@@ -52,7 +52,7 @@ const ItemCount = ({ stock, id, name, price, category }) => {
               »
             </button>
           </div>
-          <button className="btn bg-primary btn-lg text-black" onClick={onAdd}>
+          <button className="btn btn-primary btn-lg " onClick={onAdd}>
             Comprar
           </button>
         </>

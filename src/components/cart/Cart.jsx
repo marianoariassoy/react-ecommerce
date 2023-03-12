@@ -1,19 +1,18 @@
 //Dependencies
-import { useContext } from "react";
 import { Link } from "react-router-dom";
 
 //Components
 import CartForm from "./CartForm";
 
 //Context
-import { CartContext } from "../../context/cartContext";
+import { useDataContext } from "../../context/cartContext";
 
 const Cart = () => {
-  const { cart, removeFromCart, getTotal, getTotalItems } = useContext(CartContext);
+  const { cart, removeFromCart, getTotal, getTotalItems } = useDataContext();
 
   return (
-    <div className="row flex gap-6">
-      <div>
+    <div className="row gap-6">
+      <div className="mb-12">
         <table className="table w-full mb-6">
           <thead>
             <tr>
@@ -72,7 +71,7 @@ const Cart = () => {
         </div>
       </div>
 
-      <div className="col w-1/2">
+      <div className="row">
         <CartForm />
       </div>
     </div>

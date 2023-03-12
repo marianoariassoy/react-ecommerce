@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
-import { CartContext } from "../../context/cartContext";
+import { useEffect, useState } from "react";
+import { useDataContext } from "../../context/cartContext";
 
 const CartWidget = () => {
-  const { cart, getTotal } = useContext(CartContext);
+  const { cart, getTotal } = useDataContext();
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
 
